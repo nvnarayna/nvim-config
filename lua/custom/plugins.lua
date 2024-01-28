@@ -9,6 +9,8 @@ local plugins = {
         "clang-format",
         "codelldb",
         "rust-analyzer",
+        "gopls",
+        "lua-language-server",
       }
     }
   },
@@ -79,14 +81,14 @@ local plugins = {
       return require "custom.configs.null-ls"
     end,
   },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
+ {
+  "neovim/nvim-lspconfig",
+   config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-    end,
-  },
-    {
+   end,
+},
+  {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
